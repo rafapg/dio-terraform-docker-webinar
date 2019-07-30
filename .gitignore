@@ -1,0 +1,5 @@
+*/.terraform/
+terraform/digital-innovation-one-0ed74858b772.json
+.DS_Store
+terraform/variables.tf
+terraform.tfstate*
