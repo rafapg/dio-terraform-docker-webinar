@@ -15,7 +15,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   network_interface {
-    network       = "default"
+    network       = "${google_compute_network.server_net.name}"
     access_config {
     }
   }
@@ -32,7 +32,8 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   provisioner "remote-exec" {
-    inline = ["cd /home/${var.user}",
+    inline = [
+      "cd /home/${var.user}",
       "chmod +x /home/${var.user}/*.sh",
       "./bootstrap.sh",
     ]
@@ -43,4 +44,26 @@ resource "google_compute_instance" "vm_instance" {
       "./setup_instance.sh",
     ]
   }
+}
+
+
+resource "google_compute_firewall" "http_server_firewall" {
+  name    = "test-firewall"
+  network = "${google_compute_network.server_net.name}"
+
+  allow {
+    protocol = "icmp"
+  }
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  source_tags = ["api"]
+}
+
+resource "google_compute_network" "server_net" {
+  name = "server-network"
 }
