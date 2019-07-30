@@ -2,19 +2,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var minicursoSchema = new Schema({
-  name: {
-    type: String,
-    Required: 'Nome do minicurso'
-  },
+  name: String,
+  description: String,
   created_date: {
     type: Date,
     default: Date.now
-  },
-  description: {
-    type: String,
-    Required: 'Descrição do minicurso'
   }
 });
 

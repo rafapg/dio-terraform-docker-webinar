@@ -31,6 +31,11 @@ resource "google_compute_instance" "vm_instance" {
     destination = "/home/${var.user}/"
   }
 
+  provisioner "file" {
+    source      = "../api/docker-compose.yaml"
+    destination = "/home/${var.user}/"
+  }
+
   provisioner "remote-exec" {
     inline = [
       "cd /home/${var.user}",
@@ -42,6 +47,7 @@ resource "google_compute_instance" "vm_instance" {
     inline = ["cd /home/${var.user}",
       "chmod +x /home/${var.user}/*.sh",
       "./setup_instance.sh",
+      "docker-compose up -d"
     ]
   }
 }

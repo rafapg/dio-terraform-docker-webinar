@@ -1,0 +1,12 @@
+version: '3'
+services:
+  c_mongo:
+    image: mongo:latest
+    volumes:
+      - ./minicursos/data:/data/db
+  node_server:
+    image: rafapg/minicurso-server:latest
+    ports:
+      - 8080:3000
+    depends_on:
+      - c_mongo

@@ -2,7 +2,6 @@
 module.exports = function(app) {
   var minicursos = require('./minicursoController');
 
-
   app.route('/').get(function(req, res){console.log('Index'); res.json('Webserver Running!');});
   app.route('/minicursos')
     .get(minicursos.list_all)
