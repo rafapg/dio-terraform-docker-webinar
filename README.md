@@ -1,6 +1,6 @@
 # dio-terraform-docker-webinar
 
-Repositório criado para o Webniar de 
+Repositório criado para o Webniar *Subindo uma API na Cloud com Terraform e Docker*
 
 ### Terraform
 
