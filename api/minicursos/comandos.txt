@@ -1,0 +1,3 @@
+docker build -t node-server:0.0.1 .
+
+docker run --name node_server -d --link c_mongo -p 8080:3000 node-server:0.0.1

@@ -3,3 +3,5 @@ terraform/digital-innovation-one-0ed74858b772.json
 .DS_Store
 terraform/variables.tf
 terraform.tfstate*
+api/minicursos/node_modules/
+api/minicursos/data
