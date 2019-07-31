@@ -25,7 +25,7 @@ Repositório criado para o Webniar *Subindo uma API na Cloud com Terraform e Doc
 - Configurar projeto e conta no sdk
 - Configurar credenciais no GCP
 
-### Documentação Terraform?
+### Documentação Terraform
 
 - Getting started Google Provider:
     https://www.terraform.io/docs/providers/google/getting_started.html

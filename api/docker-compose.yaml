@@ -5,8 +5,8 @@ services:
     volumes:
       - ./minicursos/data:/data/db
   node_server:
-    image: rafapg/minicurso-server:latest
+    image: rafapg/dio_node_server:latest
     ports:
-      - 8080:3000
+      - 80:3000
     depends_on:
       - c_mongo

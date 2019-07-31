@@ -33,7 +33,7 @@ resource "google_compute_instance" "vm_instance" {
 
   provisioner "file" {
     source      = "../api/docker-compose.yaml"
-    destination = "/home/${var.user}/"
+    destination = "/home/${var.user}/docker-compose.yaml"
   }
 
   provisioner "remote-exec" {
@@ -51,7 +51,6 @@ resource "google_compute_instance" "vm_instance" {
     ]
   }
 }
-
 
 resource "google_compute_firewall" "http_server_firewall" {
   name    = "test-firewall"

@@ -1,0 +1,4 @@
+curl -X POST -d '{
+    name: "Minicurso teste",
+    description: "Teste da descrição"
+}' http://localhost:8080/minicursos
